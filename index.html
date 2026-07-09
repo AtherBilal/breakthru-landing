@@ -383,9 +383,43 @@ h2 em { font-style: normal; color: var(--ember); }
 .ba-tag-after::before { background: var(--ember); }
 .ba-caption { font-size: 14px; color: var(--muted); line-height: 1.5; }
 .ba-caption b { color: var(--cream); font-weight: 600; }
-.ba-note { display: flex; gap: 11px; align-items: flex-start; }
-.ba-note img { width: 32px; height: 32px; flex-shrink: 0; margin-top: 1px; filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.45)); }
-.ba-note p { font-size: 14.5px; color: var(--cream); line-height: 1.45; }
+/* Try to open the hidden list, and Ember waves you off. Click to see. */
+.peek {
+  border: 1px solid var(--hairline);
+  border-radius: 16px;
+  background: var(--surface);
+  overflow: hidden;
+}
+.peek-trigger {
+  width: 100%;
+  display: flex; align-items: center; justify-content: space-between; gap: 14px;
+  padding: 16px 18px;
+  background: none; border: none; cursor: pointer;
+  font-family: inherit; text-align: left;
+  color: var(--muted); font-size: 14.5px; font-weight: 500;
+  transition: color 0.15s ease, background 0.15s ease;
+}
+.peek-trigger:hover { color: var(--cream); background: rgba(243, 236, 224, 0.03); }
+.peek-open {
+  display: inline-flex; align-items: center; gap: 7px;
+  color: var(--ember); font-weight: 600; font-size: 13px; white-space: nowrap;
+}
+.peek-open svg { width: 13px; height: 13px; transition: transform 0.35s ease; }
+.peek[data-open="true"] .peek-open svg { transform: rotate(180deg); }
+.peek-reveal {
+  display: grid; grid-template-rows: 0fr;
+  transition: grid-template-rows 0.42s cubic-bezier(0.3, 0, 0.2, 1);
+}
+.peek[data-open="true"] .peek-reveal { grid-template-rows: 1fr; }
+.peek-inner {
+  min-height: 0; overflow: hidden;
+  display: flex; flex-direction: column; align-items: center; gap: 12px;
+  text-align: center;
+  padding: 4px 24px 26px;
+  border-top: 1px solid var(--hairline);
+}
+.peek-inner img { width: 62px; height: auto; margin-top: 18px; filter: drop-shadow(0 6px 16px rgba(0, 0, 0, 0.5)); }
+.peek-inner p { font-size: 14.5px; color: var(--cream); line-height: 1.45; max-width: 32ch; }
 
 .ba-bridge img {
   width: 92px; height: auto; display: block;
@@ -595,8 +629,7 @@ footer .dot { margin: 0 8px; opacity: 0.5; }
   section { padding: 84px 0; }
   .texts-grid { grid-template-columns: 1fr; gap: 52px; }
   .ba-grid { grid-template-columns: 1fr; gap: 22px; max-width: 460px; margin: 0 auto; }
-  .ba-bridge { display: flex; justify-content: center; }
-  .ba-bridge img { transform: rotate(90deg); width: 60px; }
+  .ba-bridge { display: none; }
   .phone { max-width: 420px; margin: 0 auto; width: 100%; }
   .honesty-inner { grid-template-columns: 1fr; gap: 18px; padding: 32px 28px; }
 }
@@ -740,9 +773,17 @@ footer .dot { margin: 0 8px; opacity: 0.5; }
           <p class="fc-meta"><b>Quick win</b> &middot; about 15 minutes &middot; the rest is handled</p>
           <div class="ba-commit"><span>Hold to commit</span></div>
         </div>
-        <div class="ba-note">
-          <img src="assets/ember-face.png" alt="Ember" width="32" height="32" />
-          <p>"Don't worry about it sweetheart. Focus on this one thing and I'll tell you what's next."</p>
+        <div class="peek" data-open="false">
+          <button class="peek-trigger" type="button" aria-expanded="false" aria-controls="peek-reveal">
+            <span>Show me the other 30 things</span>
+            <span class="peek-open">Open the list<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span>
+          </button>
+          <div class="peek-reveal" id="peek-reveal">
+            <div class="peek-inner">
+              <img src="assets/ember-point.png" alt="Ember" width="62" height="62" />
+              <p>"Don't worry about it sweetheart. Focus on this one thing and I'll tell you what's next."</p>
+            </div>
+          </div>
         </div>
       </figure>
     </div>
@@ -892,6 +933,16 @@ footer .dot { margin: 0 8px; opacity: 0.5; }
   } else {
     document.querySelectorAll('[data-reveal]').forEach(el => el.classList.add('in'));
   }
+
+  // Peek gag: tap to "open the list", get Ember instead.
+  document.querySelectorAll('.peek-trigger').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const peek = btn.closest('.peek');
+      const open = peek.getAttribute('data-open') === 'true';
+      peek.setAttribute('data-open', String(!open));
+      btn.setAttribute('aria-expanded', String(!open));
+    });
+  });
 
   // Hold-to-commit: the hero card is a working demo of the app's core gesture.
   const stage = document.querySelector('.stage');
