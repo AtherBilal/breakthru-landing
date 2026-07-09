@@ -418,7 +418,13 @@ h2 em { font-style: normal; color: var(--ember); }
   padding: 4px 24px 26px;
   border-top: 1px solid var(--hairline);
 }
-.peek-inner img { width: 86px; height: auto; margin-top: 16px; filter: drop-shadow(0 6px 16px rgba(0, 0, 0, 0.5)); }
+.peek-inner img {
+  width: 80px; height: 80px; margin-top: 18px;
+  border-radius: 18px;
+  background: #2A221C; /* == the GIF's own background, so the tile reads as one piece */
+  object-fit: cover;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
+}
 .peek-inner p { font-size: 14.5px; color: var(--cream); line-height: 1.45; max-width: 32ch; }
 
 .ba-bridge img {
