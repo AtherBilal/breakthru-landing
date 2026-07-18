@@ -1,0 +1,24 @@
+# BreakThru
+
+> BreakThru is a voice-powered focus app for ADHD brains. You brain-dump everything on your mind by voice; it extracts the real tasks, hides the full list, and shows you exactly one thing to do at a time. iPhone only, free 7-day trial, then $9.99/month or $59.99/year. Made by Divine Light Labs.
+
+## What it does
+- Voice brain-dump: say everything on your mind instead of typing a list.
+- One thing at a time: the app hides the full task list and surfaces a single next task, so an ADHD brain commits instead of freezing.
+- Gentle accountability: pledges, a focus timer, and follow-ups that carry into your texts.
+- Not a medical product: a focus and accountability tool that does not diagnose or treat any condition.
+
+## Who it's for
+People with ADHD (diagnosed or not) who feel paralyzed by long to-do lists and want a single next action instead of the whole pile.
+
+## Key facts
+- Platform: iPhone (iOS). No Android yet.
+- Pricing: Free for 7 days, then $9.99/month or $59.99/year.
+- Privacy: brain dumps belong to the user; no data selling, no cross-app tracking; account and data are deletable in-app.
+- App Store: https://apps.apple.com/us/app/breakthru-adhd/id6762671510
+
+## Links
+- Home: https://breakthruadhd.com/
+- Support: https://breakthruadhd.com/support
+- Privacy: https://breakthruadhd.com/privacy
+- Terms: https://breakthruadhd.com/terms

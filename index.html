@@ -661,6 +661,26 @@ footer .dot { margin: 0 8px; opacity: 0.5; }
   .fc-fill.manual { transition: none; }
   .spark { animation: none !important; }
 }
+
+/* ── FAQ ── */
+.faq .wrap { max-width: 820px; }
+.faq-list { margin-top: 10px; }
+.faq-item { border-bottom: 1px solid var(--hairline); }
+.faq-item summary {
+  list-style: none; cursor: pointer; padding: 22px 0;
+  font-family: var(--display); font-weight: 600;
+  font-size: clamp(18px, 2.2vw, 22px); color: var(--cream);
+  display: flex; justify-content: space-between; align-items: center; gap: 20px;
+}
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary::after {
+  content: "+"; color: var(--ember); font-size: 26px; font-weight: 400; line-height: 1;
+}
+.faq-item[open] summary::after { content: "–"; }
+.faq-item p {
+  font-size: 16px; color: var(--muted); line-height: 1.6;
+  max-width: 68ch; padding: 0 4px 24px; margin: 0;
+}
 </style>
 
 <!-- PostHog: same project as the app, so web + app share one funnel -->
@@ -668,6 +688,27 @@ footer .dot { margin: 0 8px; opacity: 0.5; }
   !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="init capture register register_once register_for_session unregister unregister_for_session getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty createPersonProfile opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing debug getPageViewId captureTraceFeedback captureTraceMetric".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
   posthog.init('phc_s7wvD5fwGBN4HfMKrKmB8yKdMAYFHkJ7ArR2UkvBzA9s', { api_host: 'https://us.i.posthog.com', person_profiles: 'identified_only', defaults: '2025-05-24' });
 </script>
+
+<!-- SEO / social / structured data -->
+<link rel="canonical" href="https://breakthruadhd.com/" />
+<meta property="og:url" content="https://breakthruadhd.com/" />
+<meta property="og:site_name" content="BreakThru" />
+<meta property="og:image" content="https://breakthruadhd.com/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="BreakThru — the focus app for ADHD brains that shows you one thing at a time." />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="BreakThru. One thing at a time." />
+<meta name="twitter:description" content="A focus app for ADHD brains that only ever shows you one thing. Dump it, let the app hold it, do the one thing in front of you." />
+<meta name="twitter:image" content="https://breakthruadhd.com/assets/og-image.png" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<link rel="sitemap" type="application/xml" href="/sitemap.xml" />
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[
+{"@type":"Organization","@id":"https://breakthruadhd.com/#org","name":"BreakThru","legalName":"Divine Light Labs LLC","url":"https://breakthruadhd.com/","logo":"https://breakthruadhd.com/assets/ember-face.png","email":"bilal@divinelightlabs.com"},
+{"@type":"WebSite","@id":"https://breakthruadhd.com/#website","name":"BreakThru","url":"https://breakthruadhd.com/","publisher":{"@id":"https://breakthruadhd.com/#org"}},
+{"@type":"MobileApplication","name":"BreakThru","operatingSystem":"iOS","applicationCategory":"ProductivityApplication","description":"A focus app for ADHD brains. Brain-dump by voice, it hides the list and hands you one thing to do at a time.","url":"https://breakthruadhd.com/","image":"https://breakthruadhd.com/assets/og-image.png","installUrl":"https://apps.apple.com/us/app/breakthru-adhd/id6762671510","downloadUrl":"https://apps.apple.com/us/app/breakthru-adhd/id6762671510","publisher":{"@id":"https://breakthruadhd.com/#org"},"offers":{"@type":"Offer","price":"9.99","priceCurrency":"USD","description":"Free 7-day trial, then $9.99/month or $59.99/year."}}
+]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is BreakThru?","acceptedAnswer":{"@type":"Answer","text":"BreakThru is a focus app for ADHD brains. You brain-dump everything on your mind by voice, it pulls out the real tasks, hides the full list, and shows you only one thing to do at a time. It's on iPhone with a free 7-day trial."}},{"@type":"Question","name":"How is BreakThru different from a to-do list app?","acceptedAnswer":{"@type":"Answer","text":"A normal to-do list shows you the whole pile, which for an ADHD brain is paralyzing. BreakThru does the opposite: it hides the list and surfaces a single task, so you commit to one thing instead of staring at forty. You dump by voice instead of typing."}},{"@type":"Question","name":"Is BreakThru good for ADHD?","acceptedAnswer":{"@type":"Answer","text":"It's built specifically around how ADHD brains work: voice brain-dumps instead of typing, one task at a time instead of an overwhelming list, and gentle accountability. It's a focus and accountability tool, not a medical product, and it does not diagnose or treat any condition."}},{"@type":"Question","name":"How much does BreakThru cost?","acceptedAnswer":{"@type":"Answer","text":"BreakThru is free for 7 days. After the trial it's $9.99 per month or $59.99 per year."}},{"@type":"Question","name":"What devices does BreakThru work on?","acceptedAnswer":{"@type":"Answer","text":"BreakThru is available on iPhone. An Android version isn't available yet."}},{"@type":"Question","name":"Does BreakThru sell my data?","acceptedAnswer":{"@type":"Answer","text":"No. Your brain dumps are yours. There's no selling your data and no cross-app tracking, and you can delete your account and everything in it from inside the app."}}]}</script>
 </head>
 <body>
 
@@ -889,6 +930,40 @@ footer .dot { margin: 0 8px; opacity: 0.5; }
 </section>
 
 <!-- ── Honesty ── -->
+<!-- ── FAQ ── -->
+<section class="faq">
+  <div class="wrap">
+    <p class="sec-eyebrow" data-reveal>Questions</p>
+    <h2 data-reveal>The honest FAQ.</h2>
+    <div class="faq-list" data-reveal>
+      <details class="faq-item">
+        <summary>What is BreakThru?</summary>
+        <p>BreakThru is a focus app for ADHD brains. You brain-dump everything on your mind by voice, it pulls out the real tasks, hides the full list, and shows you only one thing to do at a time. It's on iPhone with a free 7-day trial.</p>
+      </details>
+      <details class="faq-item">
+        <summary>How is BreakThru different from a to-do list app?</summary>
+        <p>A normal to-do list shows you the whole pile, which for an ADHD brain is paralyzing. BreakThru does the opposite: it hides the list and surfaces a single task, so you commit to one thing instead of staring at forty. You dump by voice instead of typing.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Is BreakThru good for ADHD?</summary>
+        <p>It's built specifically around how ADHD brains work: voice brain-dumps instead of typing, one task at a time instead of an overwhelming list, and gentle accountability. It's a focus and accountability tool, not a medical product, and it does not diagnose or treat any condition.</p>
+      </details>
+      <details class="faq-item">
+        <summary>How much does BreakThru cost?</summary>
+        <p>BreakThru is free for 7 days. After the trial it's $9.99 per month or $59.99 per year.</p>
+      </details>
+      <details class="faq-item">
+        <summary>What devices does BreakThru work on?</summary>
+        <p>BreakThru is available on iPhone. An Android version isn't available yet.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Does BreakThru sell my data?</summary>
+        <p>No. Your brain dumps are yours. There's no selling your data and no cross-app tracking, and you can delete your account and everything in it from inside the app.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
 <section class="honesty">
   <div class="wrap">
     <div class="honesty-inner" data-reveal>
